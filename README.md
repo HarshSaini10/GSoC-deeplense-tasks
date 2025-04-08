@@ -112,34 +112,30 @@ A standard autoencoder is trained to reconstruct gravitational lensing images wh
 1. **Reconstruction Loss:**  
    Ensures the input image \( I \) is accurately reconstructed:
 
-   
-   $$
-   L_{\text{recon}} = \| I - \hat{I} \|^2.
-   $$
+$$
+L_{\text{recon}} = \| I - \hat{I} \|^2.
+$$
    
 3. **Classification Loss:**  
    For a classifier built on the latent space:
 
-   
-   $$
-   L_{\text{cls}} = -\sum_{i} y_i \log(\hat{y}_i).
-   $$
+$$
+L_{\text{cls}} = -\sum_{i} y_i \log(\hat{y}_i).
+$$
    
 5. **PDE Loss (Smoothness Constraint):**  
    Enforces the reconstruction to be smooth by penalizing the Laplacian:
 
-   
-   $$
-   L_{\text{PDE}} = \left\| \nabla^2 \hat{I} \right\|^2.
-   $$
+$$
+L_{\text{PDE}} = \left\| \nabla^2 \hat{I} \right\|^2.
+$$
    
 7. **Energy Constraint Loss (Latent Regularization):**  
    Regularizes the latent space to have zero mean and unit variance:
-
    
-   $$
-   L_{\text{Energy}} = \| \mu_z \|^2 + \| \sigma_z - 1 \|^2,
-   $$
+$$
+L_{\text{Energy}} = \| \mu_z \|^2 + \| \sigma_z - 1 \|^2,
+$$
 
    
    where mu and sigma denote the mean and standard deviation of the latent vectors.
